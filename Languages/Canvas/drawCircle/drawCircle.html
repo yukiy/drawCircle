@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{
+			background: #EEEEEE;
+		}
+		canvas {
+			background: #FFFFFF;
+			position: absolute;
+			left: 50%;
+			margin-left: -300px;
+			top: 50%;
+			margin-top: -300px;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="600"></canvas>
+	<script>
+		var canvas = document.getElementById('canvas');
+		var ctx = canvas.getContext('2d');
+		var radius = 150;
+		ctx.beginPath();
+		ctx.arc(canvas.width/2, canvas.height/2, radius, 0, Math.PI*2, false);
+		ctx.stroke();
+	</script>
+</body>
+</html>
