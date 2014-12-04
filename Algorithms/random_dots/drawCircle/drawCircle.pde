@@ -1,14 +1,17 @@
 //Processing
 
 int radius = 150;
+float frame = 0;
 
 void drawCircle(){
+  frame += 0.5;
   
-  for(int i=0; i<36000; i++){
+  for(int i=0; i<360; i++){
     float rad = radians(i);
     float x = random(cos(rad)*radius) + width/2; 
     float y = random(sin(rad)*radius) + height/2; 
-    fill(0, 0, 0, 127);
+    fill(frame%256, 127);
+
     rect(x, y, 1, 1);
   }
 
@@ -21,7 +24,9 @@ void setup() {
   background(255);
   smooth();
   noStroke();
-  drawCircle();
 
 }
 
+void draw(){
+  drawCircle();
+}
